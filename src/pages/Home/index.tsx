@@ -1,5 +1,15 @@
-import { ProductCard } from '../../components/ProductCard';
+import { ProductCard } from './components/ProductCard';
+import { Container } from './styles';
 
 export function Home() {
-  return <ProductCard />;
+  return (
+    <Container>
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+    </Container>
+  );
 }

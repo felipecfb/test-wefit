@@ -1,3 +1,4 @@
+import { Button } from '../Button';
 import { Container, ProductImage, ProductInfo, Name, Price } from './styles';
 
 export function ProductCard() {
@@ -8,6 +9,7 @@ export function ProductCard() {
         <Name>Viúva Negra</Name>
         <Price>R$ 9,99</Price>
       </ProductInfo>
+      <Button title="Adicionar ao carrinho" quantity={0} />
     </Container>
   );
 }
