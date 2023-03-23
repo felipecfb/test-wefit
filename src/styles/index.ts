@@ -9,12 +9,12 @@ export const GlobalStyles = createGlobalStyle`
   :root {
     --white: #fff;
 
-    --background: #2F2E41;
-
+    
     --gray-900: #333333;
     --gray-500: #999999;
-
-    --blue: #009EDD;
+    
+    --blue-950: #2F2E41;
+    --blue-500: #009EDD;
 
     --green: #039B00;
   }
@@ -30,7 +30,7 @@ export const GlobalStyles = createGlobalStyle`
       }
   }
   body {
-      background: var(--background);
+      background: var(--blue-950);
       color: var(--white);
   }
   body, input, select, textarea, button {

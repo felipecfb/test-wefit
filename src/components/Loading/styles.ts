@@ -17,7 +17,7 @@ export const Loader = styled.div`
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  background: linear-gradient(0deg, #80808000 0.01%, #ffffff 100%);
+  background: linear-gradient(0deg, #80808000 0.01%, var(--white) 100%);
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 
@@ -31,7 +31,7 @@ export const Loader = styled.div`
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: var(--background);
+    background: var(--blue-950);
   }
 
   @keyframes rotation {
