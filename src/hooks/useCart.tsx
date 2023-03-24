@@ -27,11 +27,24 @@ export function CartProvider({ children }: CartProviderProps) {
     }
   };
 
+  const removeProduct = (productId: number) => {
+    try {
+      const productExists = cart.find((item) => item.id === productId);
+
+      if (productExists) {
+        setCart(cart.filter((item) => item.id !== productId));
+      }
+    } catch {
+      throw new Error('Erro na remoção do produto');
+    }
+  };
+
   return (
     <CartContext.Provider
       value={{
         cart,
-        addProduct
+        addProduct,
+        removeProduct
       }}
     >
       {children}

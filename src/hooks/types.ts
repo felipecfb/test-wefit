@@ -12,4 +12,5 @@ export interface Cart extends Product {
 export interface CartContextData {
   cart: Cart[];
   addProduct: (product: Product) => void;
+  removeProduct: (productId: number) => void;
 }
