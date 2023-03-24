@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useCart } from '../../hooks/useCart';
 import {
   Container,
@@ -17,9 +16,9 @@ export function Header() {
 
   return (
     <Container>
-      <Logo>WeMovies</Logo>
+      <Logo href="/">WeMovies</Logo>
 
-      <Cart>
+      <Cart href="/cart">
         <CartInfo>
           <Title>Meu Carrinho</Title>
           <Quantity>

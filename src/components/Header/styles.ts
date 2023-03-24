@@ -15,12 +15,12 @@ export const Container = styled.div`
   }
 `;
 
-export const Logo = styled.h3`
+export const Logo = styled.a`
   font-size: 1.25rem;
   font-weight: 700;
 `;
 
-export const Cart = styled.div`
+export const Cart = styled.a`
   display: flex;
   align-items: center;
   gap: 0.5rem;
