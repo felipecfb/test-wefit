@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
+interface ButtonProps {
+  background?: string;
+}
+
 export const Container = styled.button`
-  background: var(--blue-500);
+  background: ${(props: ButtonProps) =>
+    props.background ? props.background : 'var(--blue-500)'};
   padding: 11px 0;
 
   display: flex;

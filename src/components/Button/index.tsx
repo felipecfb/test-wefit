@@ -5,16 +5,18 @@ interface ButtonProps {
   quantity?: number;
   shoppingCartButton?: boolean;
   onClick?: () => void;
+  background?: string;
 }
 
 export function Button({
   title,
   quantity,
   shoppingCartButton,
-  onClick
+  onClick,
+  background
 }: ButtonProps) {
   return (
-    <Container onClick={onClick}>
+    <Container onClick={onClick} background={background}>
       {shoppingCartButton && (
         <QuantityWrap>
           <Icon src="./shopping-cart.svg" />
