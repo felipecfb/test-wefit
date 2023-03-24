@@ -6,7 +6,9 @@ export function EmptyCart() {
     <Container>
       <Title>Parece que não há nada por aqui :(</Title>
       <Image src="./empty-cart.svg" />
-      <Button title="Voltar" />
+      <a href="/">
+        <Button title="Voltar" />
+      </a>
     </Container>
   );
 }
