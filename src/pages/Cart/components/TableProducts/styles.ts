@@ -25,9 +25,7 @@ export const BodyRow = styled.tr``;
 
 export const BodyColumn = styled.td``;
 
-export const ProductWrap = styled.tr``;
-
-export const Product = styled.div`
+export const ProductWrap = styled.div`
   display: flex;
   align-items: center;
   gap: 3.25rem;

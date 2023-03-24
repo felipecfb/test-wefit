@@ -5,6 +5,14 @@ import * as S from './styles';
 export function TableProducts() {
   const { cart } = useCart();
 
+  const cartFormatted = cart.map((item) => {
+    return {
+      ...item,
+      priceFormatted: convertToBRL(item.price),
+      subtotal: convertToBRL(item.price * item.quantity)
+    };
+  });
+
   return (
     <S.Table>
       <S.Head>
@@ -16,17 +24,15 @@ export function TableProducts() {
         </S.HeadRow>
       </S.Head>
       <S.Body>
-        {cart.map((item) => (
+        {cartFormatted.map((item) => (
           <S.BodyRow key={item.id}>
             <S.BodyColumn>
               <S.ProductWrap>
-                <S.Product>
-                  <S.Image src={item.image} />
-                  <S.Info>
-                    <S.Name>{item.title}</S.Name>
-                    <S.ProductPrice>{convertToBRL(item.price)}</S.ProductPrice>
-                  </S.Info>
-                </S.Product>
+                <S.Image src={item.image} />
+                <S.Info>
+                  <S.Name>{item.title}</S.Name>
+                  <S.ProductPrice>{convertToBRL(item.price)}</S.ProductPrice>
+                </S.Info>
               </S.ProductWrap>
             </S.BodyColumn>
             <S.BodyColumn>
@@ -34,14 +40,16 @@ export function TableProducts() {
                 <S.MinusIcon>
                   <img src="./minus.svg" />
                 </S.MinusIcon>
-                <S.Quantity value="1" />
+                <S.Quantity type="text" readOnly value={item.quantity} />
                 <S.PlusIcon>
                   <img src="./plus.svg" />
                 </S.PlusIcon>
               </S.QuantityWrap>
             </S.BodyColumn>
             <S.BodyColumn>
-              <S.Subtotal>{item.quantity * item.price}</S.Subtotal>
+              <S.Subtotal>
+                {convertToBRL(item.price * item.quantity)}
+              </S.Subtotal>
             </S.BodyColumn>
             <S.BodyColumn>
               <S.RemoveIcon>
