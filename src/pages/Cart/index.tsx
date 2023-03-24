@@ -1,19 +1,37 @@
-import { Button } from '../../components/Button';
+import { useCart } from '../../hooks/useCart';
+import { convertToBRL } from '../../utils/convertToBRL';
+import { EmptyCart } from './components/EmptyCart';
 import { TableProducts } from './components/TableProducts';
-import { Container, Divider, Footer, Total, TotalWrap } from './styles';
+import { Container } from './styles';
 
 export function Cart() {
+  const { cart, removeProduct } = useCart();
+
+  const cartFormatted = cart.map((product) => ({
+    ...product,
+    priceFormatted: convertToBRL(product.price),
+    subtotal: convertToBRL(product.price * product.quantity)
+  }));
+
+  const total = convertToBRL(
+    cart.reduce((total, product) => total + product.price * product.quantity, 0)
+  );
+
+  function handleRemoveProduct(id: number): void {
+    removeProduct(id);
+  }
+
   return (
     <Container>
-      <TableProducts />
-      <Divider />
-      <Footer>
-        <Button title="Finalizar pedido" />
-        <TotalWrap>
-          <span>Total</span>
-          <Total>R$ 9,99</Total>
-        </TotalWrap>
-      </Footer>
+      {cartFormatted.length > 0 ? (
+        <TableProducts
+          cart={cartFormatted}
+          total={total}
+          removeProduct={handleRemoveProduct}
+        />
+      ) : (
+        <EmptyCart />
+      )}
     </Container>
   );
 }
