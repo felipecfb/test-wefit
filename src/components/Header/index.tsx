@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useCart } from '../../hooks/useCart';
 import {
   Container,
   Logo,
@@ -9,6 +11,10 @@ import {
 } from './styles';
 
 export function Header() {
+  const { cart } = useCart();
+
+  const cartQuantity = cart.length;
+
   return (
     <Container>
       <Logo>WeMovies</Logo>
@@ -16,7 +22,11 @@ export function Header() {
       <Cart>
         <CartInfo>
           <Title>Meu Carrinho</Title>
-          <Quantity>1 item</Quantity>
+          <Quantity>
+            {cartQuantity === 1
+              ? `${cartQuantity} item`
+              : `${cartQuantity} itens`}
+          </Quantity>
         </CartInfo>
         <CartImage src="./cart.svg" />
       </Cart>
