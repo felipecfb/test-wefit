@@ -13,7 +13,7 @@ export function ProductsList() {
         setProduct(response.data);
       })
       .catch((err) => {
-        console.log(err);
+        throw new Error('Error: ' + err);
       });
   }, []);
 
