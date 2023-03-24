@@ -9,6 +9,10 @@ export const Container = styled.div`
   margin: 0 auto;
 
   padding: 24.5px 0;
+
+  @media screen and (max-width: 768px) {
+    padding: 24.5px 1rem;
+  }
 `;
 
 export const Logo = styled.h3`
