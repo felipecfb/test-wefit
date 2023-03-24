@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const ProductCard = styled.div`
   padding: 10px 11px;
   background: var(--white);
   display: flex;
@@ -9,9 +9,13 @@ export const Container = styled.div`
   justify-content: center;
 
   border-radius: 4px;
+  width: 100%;
 `;
 
-export const ProductImage = styled.img``;
+export const ProductImage = styled.img`
+  width: 100%;
+  max-width: 147px;
+`;
 
 export const ProductInfo = styled.div`
   display: flex;
