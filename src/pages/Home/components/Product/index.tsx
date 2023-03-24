@@ -26,7 +26,9 @@ export function Product({ product }: ProductCardProps) {
   function handleAddProductToCart() {
     addProduct(product);
 
-    setTextButton('Item adicionado');
+    setTextButton(
+      productQuantity?.quantity! >= 1 ? 'Itens adicionados' : 'Item adicionado'
+    );
     setBackgroundButton('var(--green)');
   }
 
