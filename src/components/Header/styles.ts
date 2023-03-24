@@ -8,7 +8,7 @@ export const Container = styled.div`
   max-width: 960px;
   margin: 0 auto;
 
-  padding: 24.5px;
+  padding: 24.5px 0;
 `;
 
 export const Logo = styled.h3`
