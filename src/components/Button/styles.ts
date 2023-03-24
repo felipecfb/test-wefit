@@ -12,6 +12,10 @@ export const Container = styled.button`
 
   border: none;
   border-radius: 4px;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
 `;
 
 export const QuantityWrap = styled.div`
