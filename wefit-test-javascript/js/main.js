@@ -43,4 +43,35 @@ rowsArray.forEach(row => {
 
     Object.assign(header.style, styles);
   };
+
+  if (title === 'Cards') {
+    const divCards = row.querySelectorAll('.col-lg-3');
+
+    [...cards].forEach(card => {
+      cardsArray.push(card);
+      card.remove();
+    });
+
+    const buttonAnimals = cardsArray[0].querySelector('.btn');
+
+    const buttonStyles = {
+      background: 'var(--green)',
+      borderColor: 'var(--green)'
+    };
+
+    Object.assign(buttonAnimals.style, buttonStyles)
+
+    const newSequenceCards = [
+      cardsArray[3],
+      cardsArray[0],
+      cardsArray[2],
+      cardsArray[1],
+    ];
+
+    divCards.forEach(divCard => {
+      divCard.append(
+        newSequenceCards.shift()
+      );
+    });
+  };
 });
