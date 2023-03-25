@@ -74,4 +74,20 @@ rowsArray.forEach(row => {
       );
     });
   };
+
+  if (title === 'Lista') {
+    const list = row.querySelector('ul');
+    const item = row.querySelector('li:first-child');
+
+    item.classList.remove('active');
+
+    const fourItem = item.cloneNode(true);
+    const fiveItem = item.cloneNode(true);
+
+    fourItem.textContent = 'Quarto item';
+    fourItem.classList.add('active');
+    fiveItem.textContent = 'Quinto item';
+
+    list.append(fourItem, fiveItem);
+  }
 });
