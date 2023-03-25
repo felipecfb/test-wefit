@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+## Sobre o projeto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O desafio 1 que se encontra na pasta wefit-test-javascript foi um projeto em que era necessário realizar algumas alterações no HTML apenas utilizando Javascript, seguindo as imagens propostas.
 
-## Available Scripts
+O desafio 2 que se encontra na raíz, foi um projeto para fazer a criação de um ecommerce, onde possuímos um json-server, servindo como fake api para listar todos os filmes disponíveis para compra. Na página inicial, podemos adicionar um ou mais no carrinho. Ao clicar no carrinho somos redirecionados para página de carrinho, onde vemos todos que foram adicionados, podemos excluir, incrementar/decrementar a quantidade por produto e também finalizar a compra.
 
-In the project directory, you can run:
+## Tecnologias utilizadas
 
-### `yarn start`
+- React
+- Typescript
+- Styled-components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Iniciando o projeto
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Na pasta raíz do projeto, digite no terminal:
 
-### `yarn test`
+### `yarn` ou `npm i`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para instalar as dependências.
 
-### `yarn build`
+### `yarn server`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para iniciar a nossa fake api e listar todos os filmes disponíveis na página inicial.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `yarn start` ou `npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para iniciar o projeto em modo de desenvolvimento.  
+Abra <http://localhost:3000> para visualizar no seu navegador de preferência.
 
-### `yarn eject`
+## Desenvolvido por:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Felipe da Costa Ferreira Vieira Bastos
