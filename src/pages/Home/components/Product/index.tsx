@@ -3,17 +3,7 @@ import { Button } from '../../../../components/Button';
 import { useCart } from '../../../../hooks/useCart';
 import { convertToBRL } from '../../../../utils/convertToBRL';
 import { ProductCard, ProductImage, ProductInfo, Name, Price } from './styles';
-
-export type Product = {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-};
-
-interface ProductCardProps {
-  product: Product;
-}
+import { ProductCardProps } from './types';
 
 export function Product({ product }: ProductCardProps) {
   const [textButton, setTextButton] = useState('Adicionar ao carrinho');

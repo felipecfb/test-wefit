@@ -1,24 +1,7 @@
 import { Button } from '../../../../components/Button';
 import { convertToBRL } from '../../../../utils/convertToBRL';
 import * as S from './styles';
-
-type Cart = {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-  quantity: number;
-  subtotal: string;
-};
-
-interface TableProductsProps {
-  cart: Cart[];
-  total: string;
-  removeProduct: (id: number) => void;
-  handleProductIncrement: (productId: number) => void;
-  handleProductDecrement: (productId: number) => void;
-  handleConfirmOrder: () => void;
-}
+import { TableProductsProps } from './types';
 
 export function TableProducts({
   cart,

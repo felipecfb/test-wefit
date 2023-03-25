@@ -1,12 +1,5 @@
 import { Container, Icon, QuantityWrap, Quantity, Title } from './styles';
-
-interface ButtonProps {
-  title: string;
-  quantity?: number;
-  shoppingCartButton?: boolean;
-  onClick?: () => void;
-  background?: string;
-}
+import { ButtonProps } from './types';
 
 export function Button({
   title,

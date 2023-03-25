@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { Product } from '../pages/Home/components/Product';
+import { IProduct } from '../pages/Home/components/Product/types';
 import { Cart, CartContextData, CartProviderProps } from './types';
 
 const CartContext = createContext({} as CartContextData);
@@ -17,7 +17,7 @@ export function CartProvider({ children }: CartProviderProps) {
     }
   }, []);
 
-  const addProduct = (product: Product) => {
+  const addProduct = (product: IProduct) => {
     try {
       const productExists = cart.find((item) => item.id === product.id);
 
