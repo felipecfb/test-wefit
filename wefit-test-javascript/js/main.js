@@ -1,4 +1,5 @@
 rowsArray = [];
+cardsArray = [];
 
 const rows = document.querySelectorAll('.row');
 
