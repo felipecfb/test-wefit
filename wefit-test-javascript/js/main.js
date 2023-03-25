@@ -2,6 +2,7 @@ rowsArray = [];
 cardsArray = [];
 
 const rows = document.querySelectorAll('.row');
+const cards = document.querySelectorAll('.card');
 
 rows.forEach(row => rowsArray.push(row));
 
