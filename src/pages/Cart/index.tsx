@@ -41,7 +41,7 @@ export function Cart() {
   function handleConfirmOrder(): void {
     confirmOrder();
 
-    navigate('/checkout-success');
+    navigate('/order-success');
   }
 
   return (

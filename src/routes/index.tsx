@@ -1,11 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Root from '../layout/root';
-import { Cart, Checkout, Home } from '../pages';
+import { Cart, OrderSuccess, Home } from '../pages';
 
 enum Routes {
   HOME = '/',
   CART = '/cart',
-  CHECKOUT = '/checkout-success'
+  ORDER_SUCCESS = '/order-success'
 }
 
 export const router = createBrowserRouter([
@@ -22,8 +22,8 @@ export const router = createBrowserRouter([
         element: <Cart />
       },
       {
-        path: Routes.CHECKOUT,
-        element: <Checkout />
+        path: Routes.ORDER_SUCCESS,
+        element: <OrderSuccess />
       }
     ]
   }

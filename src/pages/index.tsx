@@ -1,5 +1,5 @@
 import { Cart } from './Cart';
-import { Checkout } from './Checkout';
+import { OrderSuccess } from './OrderSuccess';
 import { Home } from './Home';
 
-export { Home, Cart, Checkout };
+export { Home, Cart, OrderSuccess };

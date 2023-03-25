@@ -1,7 +1,7 @@
 import { Button } from '../../components/Button';
 import { Container, Image, Title } from './styles';
 
-export function Checkout() {
+export function OrderSuccess() {
   return (
     <Container>
       <Title>Compra realizada com sucesso!</Title>
