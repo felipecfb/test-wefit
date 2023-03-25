@@ -23,4 +23,24 @@ rowsArray.forEach(row => {
 
     Object.assign(btnGroup.style, styles);
   };
+
+  if (title === 'Header') {
+    const header = row.querySelector('div > .jumbotron');
+    const button = header.querySelector('a');
+
+    const buttonStyles = {
+      background: 'var(--green)',
+      borderColor: 'var(--green)'
+    };
+
+    Object.assign(button.style, buttonStyles)
+
+    const styles = {
+      textAlign: 'end',
+      color: 'var(--white)',
+      background: 'var(--gray)',
+    };
+
+    Object.assign(header.style, styles);
+  };
 });
