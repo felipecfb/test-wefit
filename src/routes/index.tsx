@@ -5,7 +5,7 @@ import { Cart, Checkout, Home } from '../pages';
 enum Routes {
   HOME = '/',
   CART = '/cart',
-  CHECKOUT = '/checkout'
+  CHECKOUT = '/checkout-success'
 }
 
 export const router = createBrowserRouter([

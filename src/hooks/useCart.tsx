@@ -1,11 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { Product } from '../pages/Home/components/Product';
-import {
-  Cart,
-  CartContextData,
-  CartProviderProps,
-  UpdateProductQuantity
-} from './types';
+import { Cart, CartContextData, CartProviderProps } from './types';
 
 const CartContext = createContext({} as CartContextData);
 
@@ -125,6 +120,11 @@ export function CartProvider({ children }: CartProviderProps) {
     }
   };
 
+  function confirmOrder(): void {
+    localStorage.removeItem(WeMoviesLocalStorageKey);
+    setCart([]);
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -132,7 +132,8 @@ export function CartProvider({ children }: CartProviderProps) {
         addProduct,
         removeProduct,
         productIncrement,
-        productDecrement
+        productDecrement,
+        confirmOrder
       }}
     >
       {children}

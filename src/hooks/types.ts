@@ -15,8 +15,5 @@ export interface CartContextData {
   removeProduct: (productId: number) => void;
   productIncrement: (productId: number) => void;
   productDecrement: (productId: number) => void;
-}
-
-export interface UpdateProductQuantity {
-  productId: number;
+  confirmOrder: () => void;
 }

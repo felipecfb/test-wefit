@@ -10,12 +10,18 @@ export const Container = styled.div`
   gap: 2rem;
   padding: 4rem 0;
 
-  button {
-    max-width: 180px;
-  }
-
   border-radius: 4px;
   background: var(--white);
+
+  a {
+    width: 100%;
+  }
+
+  button {
+    max-width: 180px;
+
+    margin: 0 auto;
+  }
 `;
 
 export const Title = styled.h2`

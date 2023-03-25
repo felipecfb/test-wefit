@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
 import { convertToBRL } from '../../utils/convertToBRL';
 import { EmptyCart } from './components/EmptyCart';
@@ -5,7 +6,15 @@ import { TableProducts } from './components/TableProducts';
 import { Container } from './styles';
 
 export function Cart() {
-  const { cart, removeProduct, productIncrement, productDecrement } = useCart();
+  const {
+    cart,
+    removeProduct,
+    productIncrement,
+    productDecrement,
+    confirmOrder
+  } = useCart();
+
+  const navigate = useNavigate();
 
   const cartFormatted = cart.map((product) => ({
     ...product,
@@ -29,6 +38,12 @@ export function Cart() {
     productDecrement(productId);
   }
 
+  function handleConfirmOrder(): void {
+    confirmOrder();
+
+    navigate('/checkout-success');
+  }
+
   return (
     <Container>
       {cartFormatted.length > 0 ? (
@@ -38,6 +53,7 @@ export function Cart() {
           removeProduct={handleRemoveProduct}
           handleProductIncrement={handleProductIncrement}
           handleProductDecrement={handleProductDecrement}
+          handleConfirmOrder={handleConfirmOrder}
         />
       ) : (
         <EmptyCart />

@@ -17,6 +17,7 @@ interface TableProductsProps {
   removeProduct: (id: number) => void;
   handleProductIncrement: (productId: number) => void;
   handleProductDecrement: (productId: number) => void;
+  handleConfirmOrder: () => void;
 }
 
 export function TableProducts({
@@ -24,7 +25,8 @@ export function TableProducts({
   total,
   removeProduct,
   handleProductIncrement,
-  handleProductDecrement
+  handleProductDecrement,
+  handleConfirmOrder
 }: TableProductsProps) {
   return (
     <>
@@ -76,7 +78,7 @@ export function TableProducts({
       </S.Table>
       <S.Divider></S.Divider>
       <S.Footer>
-        <Button title="Finalizar pedido" />
+        <Button title="Finalizar pedido" onClick={handleConfirmOrder} />
         <S.TotalWrap>
           <span>Total</span>
           <S.Total>{total}</S.Total>

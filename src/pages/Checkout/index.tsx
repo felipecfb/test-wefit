@@ -6,7 +6,9 @@ export function Checkout() {
     <Container>
       <Title>Compra realizada com sucesso!</Title>
       <Image src="./success-checkout.svg" />
-      <Button title="Voltar" />
+      <a href="/">
+        <Button title="Voltar" />
+      </a>
     </Container>
   );
 }
