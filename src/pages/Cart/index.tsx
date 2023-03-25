@@ -5,7 +5,7 @@ import { TableProducts } from './components/TableProducts';
 import { Container } from './styles';
 
 export function Cart() {
-  const { cart, removeProduct } = useCart();
+  const { cart, removeProduct, productIncrement, productDecrement } = useCart();
 
   const cartFormatted = cart.map((product) => ({
     ...product,
@@ -21,6 +21,14 @@ export function Cart() {
     removeProduct(id);
   }
 
+  function handleProductIncrement(productId: number): void {
+    productIncrement(productId);
+  }
+
+  function handleProductDecrement(productId: number): void {
+    productDecrement(productId);
+  }
+
   return (
     <Container>
       {cartFormatted.length > 0 ? (
@@ -28,6 +36,8 @@ export function Cart() {
           cart={cartFormatted}
           total={total}
           removeProduct={handleRemoveProduct}
+          handleProductIncrement={handleProductIncrement}
+          handleProductDecrement={handleProductDecrement}
         />
       ) : (
         <EmptyCart />

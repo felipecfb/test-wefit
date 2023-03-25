@@ -1,6 +1,11 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { Product } from '../pages/Home/components/Product';
-import { Cart, CartContextData, CartProviderProps } from './types';
+import {
+  Cart,
+  CartContextData,
+  CartProviderProps,
+  UpdateProductQuantity
+} from './types';
 
 const CartContext = createContext({} as CartContextData);
 
@@ -66,12 +71,68 @@ export function CartProvider({ children }: CartProviderProps) {
     }
   };
 
+  const productIncrement = (productId: number) => {
+    const productExists = cart.find((item) => item.id === productId);
+
+    if (productExists) {
+      setCart(
+        cart.map((item) =>
+          item.id === productId
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+
+      localStorage.setItem(
+        WeMoviesLocalStorageKey,
+        JSON.stringify(
+          cart.map((item) =>
+            item.id === productId
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
+          )
+        )
+      );
+    }
+  };
+
+  const productDecrement = (productId: number) => {
+    const productExists = cart.find((item) => item.id === productId);
+
+    if (productExists) {
+      if (productExists.quantity > 1) {
+        setCart(
+          cart.map((item) =>
+            item.id === productId
+              ? { ...item, quantity: item.quantity - 1 }
+              : item
+          )
+        );
+
+        localStorage.setItem(
+          WeMoviesLocalStorageKey,
+          JSON.stringify(
+            cart.map((item) =>
+              item.id === productId
+                ? { ...item, quantity: item.quantity - 1 }
+                : item
+            )
+          )
+        );
+      } else {
+        return;
+      }
+    }
+  };
+
   return (
     <CartContext.Provider
       value={{
         cart,
         addProduct,
-        removeProduct
+        removeProduct,
+        productIncrement,
+        productDecrement
       }}
     >
       {children}

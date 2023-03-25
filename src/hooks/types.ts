@@ -13,4 +13,10 @@ export interface CartContextData {
   cart: Cart[];
   addProduct: (product: Product) => void;
   removeProduct: (productId: number) => void;
+  productIncrement: (productId: number) => void;
+  productDecrement: (productId: number) => void;
+}
+
+export interface UpdateProductQuantity {
+  productId: number;
 }

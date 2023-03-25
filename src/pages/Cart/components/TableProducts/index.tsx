@@ -15,12 +15,16 @@ interface TableProductsProps {
   cart: Cart[];
   total: string;
   removeProduct: (id: number) => void;
+  handleProductIncrement: (productId: number) => void;
+  handleProductDecrement: (productId: number) => void;
 }
 
 export function TableProducts({
   cart,
   total,
-  removeProduct
+  removeProduct,
+  handleProductIncrement,
+  handleProductDecrement
 }: TableProductsProps) {
   return (
     <>
@@ -47,11 +51,11 @@ export function TableProducts({
               </S.BodyColumn>
               <S.BodyColumn>
                 <S.QuantityWrap>
-                  <S.MinusIcon>
+                  <S.MinusIcon onClick={() => handleProductDecrement(item.id)}>
                     <img src="./minus.svg" />
                   </S.MinusIcon>
                   <S.Quantity type="text" readOnly value={item.quantity} />
-                  <S.PlusIcon>
+                  <S.PlusIcon onClick={() => handleProductIncrement(item.id)}>
                     <img src="./plus.svg" />
                   </S.PlusIcon>
                 </S.QuantityWrap>
